@@ -11,6 +11,8 @@
 		1F78EF022A6BD02200835023 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F78EF012A6BD02200835023 /* ContentView.swift */; };
 		1F78EF042A6BD02400835023 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F78EF032A6BD02400835023 /* Assets.xcassets */; };
 		1F78EF072A6BD02400835023 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F78EF062A6BD02400835023 /* Preview Assets.xcassets */; };
+		1F78EF0E2A6BD07900835023 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F78EF0D2A6BD07900835023 /* SliderView.swift */; };
+		1F78EF102A6BDA3300835023 /* SliderGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F78EF0F2A6BDA3300835023 /* SliderGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		1F78EF012A6BD02200835023 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1F78EF032A6BD02400835023 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F78EF062A6BD02400835023 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1F78EF0D2A6BD07900835023 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
+		1F78EF0F2A6BDA3300835023 /* SliderGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,8 @@
 			isa = PBXGroup;
 			children = (
 				1F78EEFF2A6BD02200835023 /* SliderGameApp.swift */,
+				1F78EF0F2A6BDA3300835023 /* SliderGame.swift */,
+				1F78EF0D2A6BD07900835023 /* SliderView.swift */,
 				1F78EF012A6BD02200835023 /* ContentView.swift */,
 				1F78EF032A6BD02400835023 /* Assets.xcassets */,
 				1F78EF052A6BD02400835023 /* Preview Content */,
@@ -137,6 +143,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F78EF102A6BDA3300835023 /* SliderGame.swift in Sources */,
+				1F78EF0E2A6BD07900835023 /* SliderView.swift in Sources */,
 				1F78EF022A6BD02200835023 /* ContentView.swift in Sources */,
 				1F78EF002A6BD02200835023 /* SliderGameApp.swift in Sources */,
 			);

@@ -9,12 +9,14 @@ import SwiftUI
 
 struct SliderView: UIViewRepresentable {
     
-    @ObservedObject var sliderGame: SliderGame
+    @Binding var value: Double
+    
+    let alpha: Int
     
     func makeUIView(context: Context) -> UISlider {
         let slider = UISlider()
         slider.maximumValue = 100
-        slider.value = Float(sliderGame.currentValue)
+        slider.value = Float(value)
         slider.addTarget(
             context.coordinator,
             action: #selector(Coordinator.didChangeSlider),
@@ -25,36 +27,36 @@ struct SliderView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UISlider, context: Context) {
-        uiView.setValue(Float(sliderGame.currentValue), animated: true)
+        uiView.setValue(Float(value), animated: true)
         uiView.thumbTintColor = UIColor(
             red: 1,
             green: 0.2,
             blue: 0.5,
-            alpha: CGFloat(sliderGame.computeScore()) / 100
+            alpha: CGFloat(alpha) / 100
         )
     }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(sliderGame: sliderGame)
+        Coordinator(value: $value)
     }
 }
 
 extension SliderView {
     class Coordinator: NSObject {
-        @ObservedObject var sliderGame: SliderGame
+        @Binding var value: Double
         
-        init(sliderGame: SliderGame) {
-            self.sliderGame = sliderGame
+        init(value: Binding<Double>) {
+            self._value = value
         }
         
         @objc func didChangeSlider(_ sender: UISlider) {
-            sliderGame.currentValue = Double(sender.value)
+            value = Double(sender.value)
         }
     }
 }
 
 struct SliderView_Previews: PreviewProvider {
     static var previews: some View {
-        SliderView(sliderGame: SliderGame())
+        SliderView(value: .constant(10), alpha: 50)
     }
 }

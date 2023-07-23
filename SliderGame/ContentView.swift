@@ -11,12 +11,17 @@ struct ContentView: View {
     @StateObject private var sliderGame = SliderGame()
     @State private var alertPresented: Bool = false
     
+    @State var alpha = 100
+    
     var body: some View {
         VStack(spacing: 30) {
             Text("Подвиньте слайдер как можно ближе к \(sliderGame.targetValue)")
             HStack {
                 Text("0")
-                SliderView(sliderGame: sliderGame)
+                SliderView(value: $sliderGame.currentValue, alpha: alpha)
+                    .onChange(of: sliderGame.currentValue) { _ in
+                        alpha = sliderGame.computeScore()
+                    }
                 Text("100")
             }
             Button("Check me") {
@@ -24,6 +29,7 @@ struct ContentView: View {
             }
             Button("New game") {
                 sliderGame.newGame()
+                alpha = sliderGame.computeScore()
             }
         }
         .padding()
